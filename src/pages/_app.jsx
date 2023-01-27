@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 
+import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 
 import '@/styles/tailwind.css'
@@ -25,7 +26,8 @@ export default function App({ Component, pageProps, router }) {
           <div className="w-full bg-white ring-1 ring-zinc-100" />
         </div>
       </div>
-      <div className="relative mt-10">
+      <div className="relative">
+        <Header />
         <main>
           <Component previousPathname={previousPathname} {...pageProps} />
         </main>
