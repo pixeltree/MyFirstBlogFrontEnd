@@ -26,10 +26,6 @@ Finally, open [http://localhost:3000](http://localhost:3000) in your browser to 
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## License
-
-This site template is a commercial product and is licensed under the [Tailwind UI license](https://tailwindui.com/license).
-
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -39,7 +35,7 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-To learn more about the technologies used in this site template, see the following resources:
+To learn more about the technologies used in this site, see the following resources:
 
 - [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
 - [Next.js](https://nextjs.org/docs) - the official Next.js documentation
