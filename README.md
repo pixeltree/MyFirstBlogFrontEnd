@@ -2,15 +2,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, this app requires the back end set up and running. Once you've set up the back end, continue with the instructions.
+This app requires the back end set up and running. Once you've set up the back end, continue with the instructions.
 
-Then, install the npm dependencies:
+First, install the npm dependencies using the command line and running the following inside the 'MyFirstBlogFrontEnd' directory:
 
 ```bash
 npm install
 ```
 
-Next, create a new file named `.env.local` and copy the contents of the  `.env.local.example` file into it. We'll be filling in the missing entries through this setup.
+Next, create a new file named `.env.local` and copy the contents of the  `.env.local.example` file into it. We'll be filling in the missing entries throughout this setup.
 
 Ensure the backend server is running.
 
@@ -29,19 +29,20 @@ You can start editing the page by modifying `pages/index.js`. The page will auto
 #### Auth0 project setup
 To enable authentication, create an account with [Auth0](https://auth0.com/). 
 Once you've logged in and have set up a default app:
-1. Create a new single page app using React
-
-Pretty nifty, right? Next, we will configure Auth0 to work with the app
-
-2. Navigate to the settings tab of your applications dashboard within Auth0
-3. Fill in your `.env.local` file with the tokens found on the settings page
-    * `NEXT_PUBLIC_AUTH0_ISSUER_BASE_URL` should be set to the `Domain` value with `https://` added to the beginning
-4. Add `http://localhost:3000` to the following settings:
+1. Once the default app has been created, create a new single page app
+2. Navigate to applications in the sidebar and then go to the new app you just created
+3. Navigate to the settings tab of the application
+4. Fill in your `.env.local` file with the tokens found on the settings page
+    * `REPLACE_WITH_AUTH0_TENANT` should be replaced with the `Domain` value from the settings page
+    * `REPLACE_WITH_AUTH0_CLIENT_ID` should be replaced with the `Client ID`
+    * `REPLACE_WITH_AUTH0_SECRET` should be replaced with the `Client Secret`
+5. Add `http://localhost:3000` to the following in the auth0 application settings dashboard:
     1. `Allowed Callback URLs`
     2. `Allowed Logout URLs`
     3. `Allowed Web Origins`
     4. `Allowed Origins (CORS)`
-5. Test by starting up the server using `yarn dev` or `npm run dev` and logging in
+6. Save the changes to the auth0 application
+7. Test by starting up the server using `npm run dev`, navigating to [http://localhost:3000](http://localhost:3000), clicking the login button, and signing up as a new user
 
 ## Learn More
 
