@@ -2,50 +2,46 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, install the npm dependencies:
+First, this app requires the back end set up and running. Once you've set up the back end, continue with the instructions.
+
+Then, install the npm dependencies:
 
 ```bash
-yarn install
+npm install
 ```
 
-Next, copy the `.env.local.example` file as `.env.local` in the root of your project and set the `NEXT_PUBLIC_SITE_URL` variable to your site's public URL:
+Next, create a new file named `.env.local` and copy the contents of the  `.env.local.example` file into it. We'll be filling in the missing entries through this setup.
 
-```
-NEXT_PUBLIC_SITE_URL=https://example.com
-```
+Ensure the backend server is running.
 
 Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
 Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+You can start editing the page by modifying `pages/index.js`. The page will automatically update as you edit the file.
 
 ### Authentication
 
 #### Auth0 project setup
-To enable authentication, create an account with [Auth0](https://auth0.com/). Once you've logged in:
-1. Create a single page app using React
-2. Modify the Login box if you wish but default values are fine
-3. Ensure login works within the sandbox
+To enable authentication, create an account with [Auth0](https://auth0.com/). 
+Once you've logged in and have set up a default app:
+1. Create a new single page app using React
 
 Pretty nifty, right? Next, we will configure Auth0 to work with the app
 
-4. Navigate to the settings tab of your applications dashboard within Auth0
-5. Fill in your `.env.local` file with the tokens found on the settings page
+2. Navigate to the settings tab of your applications dashboard within Auth0
+3. Fill in your `.env.local` file with the tokens found on the settings page
     * `NEXT_PUBLIC_AUTH0_ISSUER_BASE_URL` should be set to the `Domain` value with `https://` added to the beginning
-6. Set the `Token Endpoint Authentication Method` to `None`
-7. Add `http://localhost:3000` to the following settings:
+4. Add `http://localhost:3000` to the following settings:
     1. `Allowed Callback URLs`
     2. `Allowed Logout URLs`
     3. `Allowed Web Origins`
     4. `Allowed Origins (CORS)`
-8. Test by starting up the server using `yarn dev` or `npm run dev` and logging in
+5. Test by starting up the server using `yarn dev` or `npm run dev` and logging in
 
 ## Learn More
 
