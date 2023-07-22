@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { Auth0Provider } from "@auth0/auth0-react";
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
@@ -28,19 +28,13 @@ export default function App({ Component, pageProps, router }) {
         </div>
       </div>
       <div className="relative">
-        <Auth0Provider
-          domain={`http://${process.env.NEXT_PUBLIC_AUTH0_ISSUER_BASE_URL}`}
-          clientId={process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID}
-          authorizationParams={{
-            redirect_uri: process.env.NEXT_PUBLIC_AUTH0_BASE_URL
-          }}
-        >
+        <UserProvider>
           <Header />
           <main>
             <Component previousPathname={previousPathname} {...pageProps} />
           </main>
           <Footer />
-        </Auth0Provider>
+        </UserProvider>
       </div>
     </>
   )
