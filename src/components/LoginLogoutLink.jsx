@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0/client"
-import { useEffect, useState } from "react"
+import { useMemo } from "react"
 
 const LoginButton = () => {
   return (
@@ -25,12 +25,8 @@ const LogoutButton = () => {
 }
 
 const LoginLogoutLink = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
   const { user, isLoading } = useUser();
-
-  useEffect(() => {
-    setIsAuthenticated(!isLoading && !!user)
-  }, [user, isLoading])
+  const isAuthenticated = useMemo(() => !isLoading && !!user, [user, isLoading])
 
   return (
     isAuthenticated ?
