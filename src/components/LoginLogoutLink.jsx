@@ -1,25 +1,36 @@
-import { useAuth0 } from "@auth0/auth0-react"
+import Link from "next/link";
+import { useUser } from "@auth0/nextjs-auth0/client"
+import { useEffect, useMemo, useState } from "react"
 
 const LoginButton = () => {
-  const { loginWithRedirect } = useAuth0()
-
-  return <button onClick={() => loginWithRedirect()} className="whitespace-nowrap">
-    Login
-  </button>
+  return (
+    <Link
+      href="/api/auth/login"
+      className="whitespace-nowrap relative block px-3 py-2 transition hover:text-teal-500"
+    >
+      Login
+    </Link>
+  )
 };
 
 const LogoutButton = () => {
-  const { logout } = useAuth0()
-
   return (
-    <button onClick={() => logout({ returnTo: window.location.origin })} className="whitespace-nowrap">
+    <Link
+      href="/api/auth/logout"
+      className="whitespace-nowrap relative block px-3 py-2 transition hover:text-teal-500"
+    >
       Log out
-    </button>
+    </Link>
   )
 }
 
 const LoginLogoutLink = () => {
-  const { isAuthenticated } = useAuth0()
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const { user, isLoading } = useUser();
+
+  useEffect(() => {
+    setIsAuthenticated(!isLoading && !!user)
+  }, [user, isLoading])
 
   return (
     isAuthenticated ?
