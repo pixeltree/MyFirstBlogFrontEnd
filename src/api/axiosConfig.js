@@ -5,7 +5,6 @@ const BASE_URL = process.env.NEXT_PUBLIC_DOTNET_SERVER_URL
 
 const AXIOS_BASE = axios.create({
     baseURL: BASE_URL,
-    timeout: 3000,
   })
 
 const JSON_CLIENT = isHyperlink(BASE_URL) ? AXIOS_BASE : false
