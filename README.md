@@ -33,7 +33,7 @@ Once you've logged in and have set up a default app:
 2. Navigate to applications in the sidebar and then go to the new app you just created
 3. Navigate to the settings tab of the application
 4. Fill in your `.env.local` file with the tokens found on the settings page
-    * `REPLACE_WITH_AUTH0_TENANT` should be replaced with the `Domain` value from the settings page. Make sure the full variable starts with `https://`
+    * `REPLACE_WITH_AUTH0_DOMAIN` should be replaced with the `Domain` value from the settings page. Make sure the full variable starts with `https://`
     * `REPLACE_WITH_AUTH0_CLIENT_ID` should be replaced with the `Client ID`
     * `REPLACE_WITH_AUTH0_SECRET` should be replaced with the `Client Secret`
 5. Add `http://localhost:3000` to the following in the auth0 application settings dashboard:
