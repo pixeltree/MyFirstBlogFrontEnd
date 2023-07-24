@@ -28,21 +28,46 @@ You can start editing the page by modifying `pages/index.js`. The page will auto
 
 #### Auth0 project setup
 To enable authentication, create an account with [Auth0](https://auth0.com/). 
-Once you've logged in and have set up a default app:
-1. Once the default app has been created, create a new single page app
-2. Navigate to applications in the sidebar and then go to the new app you just created
-3. Navigate to the settings tab of the application
-4. Fill in your `.env.local` file with the tokens found on the settings page
-    * `REPLACE_WITH_AUTH0_TENANT` should be replaced with the `Domain` value from the settings page. Make sure the full variable starts with `https://`
+The registration process will have you create a default app. 
+
+1. Create a Regular Web Application with NextJs.
+   ![Choose regular web application](setup-screenshots/auth0-create-sample-app.png)
+
+2. Choose NextJs as the technology
+   ![Choose NextJs as the technology](setup-screenshots/auth0-select-technology.png)
+
+3. You can press continue on the next page. You can modify the login box in the future if you wish.
+   ![Customize login box](setup-screenshots/auth0-customize-login-box.png)
+
+4. Test out the login box to see how it works when it's set up properly.
+
+5. Next, navigate to the application's page.
+      * All your applications, reachable through the sidebar:
+   ![All your applications, reachable through the sidebar](setup-screenshots/auth0-applications.png)
+      * The application page:
+   ![The application page](setup-screenshots/auth0-application-page.png)
+
+6. Fill in your `.env.local` file with the tokens found on the settings page
+    * `REPLACE_WITH_AUTH0_DOMAIN` should be replaced with the `Domain` value from the settings page. Make sure the full variable starts with `https://`
     * `REPLACE_WITH_AUTH0_CLIENT_ID` should be replaced with the `Client ID`
     * `REPLACE_WITH_AUTH0_SECRET` should be replaced with the `Client Secret`
-5. Add `http://localhost:3000` to the following in the auth0 application settings dashboard:
-    1. `Allowed Callback URLs`
-    2. `Allowed Logout URLs`
-    3. `Allowed Web Origins`
-    4. `Allowed Origins (CORS)`
-6. Save the changes to the auth0 application
-7. Test by starting up the server using `npm run dev`, navigating to [http://localhost:3000](http://localhost:3000), clicking the login button, and signing up as a new user
+
+7. Add `http://localhost:3000/api/auth/callback` to the `Allowed Callback URLs`
+   ![The allowed callback urls field is in the Application URIs section](setup-screenshots/auth0-allowed-callback-urls.png)
+
+8. Add `http://localhost:3000` to the following in the auth0 application settings dashboard:
+   1. `Allowed Logout URLs`
+   2. `Allowed Web Origins`
+   3. `Allowed Origins (CORS)`
+   * The Application URIs section should look like this:
+     ![The Application URIs section](setup-screenshots/auth0-application-uris-section.png)
+   * The Cross-Origin Authentication section should look like this:
+     ![The Cross-Origin Authentication section](setup-screenshots/auth0-cross-origin-authentication-section.png)
+
+9. Save the changes to the auth0 application
+
+10. Test by starting up the server using `npm run dev`, navigating to [http://localhost:3000](http://localhost:3000), clicking the login button, 
+    and either signing up as a new user or signing in with your google account
 
 ## Learn More
 
